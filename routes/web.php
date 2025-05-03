@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
+
+Route::middleware(['auth'])->group(function(){
+    Route::resource('services', ServicesController::class)->middleware('can:is-admin');
+
+});
+
 
 Auth::routes();
 
