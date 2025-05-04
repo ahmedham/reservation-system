@@ -10,7 +10,11 @@ class ServicesRepository
 
     public function getAllServices()
     {
-        return Service::all();
+        if(auth()->user()->isAdmin()){
+            return Service::all();
+        }
+
+        return Service::where('is_available',true)->get();
     }
 
     public function storeService(ServiceEntity $service)

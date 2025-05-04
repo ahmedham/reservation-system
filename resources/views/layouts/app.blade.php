@@ -38,7 +38,7 @@
     </div>
 
     <strong>
-        <a href="{{ config('app.company_url', '#') }}">
+        <a href="{{ config('app.company_url', route('home'))}}">
             {{ config('app.company_name', 'My company') }}
         </a>
     </strong>
@@ -47,29 +47,12 @@
 {{-- Add common Javascript/Jquery code --}}
 
 @push('js')
-<script>
+@include('partials._session')
 
-    $(document).ready(function() {
-        // Add your common script logic here...
-    });
-
-</script>
 @endpush
 
 {{-- Add common CSS customizations --}}
 
 @push('css')
-<style type="text/css">
 
-    {{-- You can add AdminLTE customizations here --}}
-    /*
-    .card-header {
-        border-bottom: none;
-    }
-    .card-title {
-        font-weight: 600;
-    }
-    */
-
-</style>
 @endpush

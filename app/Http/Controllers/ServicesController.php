@@ -11,7 +11,10 @@ class ServicesController extends Controller
 {
     public function __construct(
         private ServicesService $servicesService
-    ) {}
+    ) {
+
+        $this->middleware('can:is-admin')->except('index');
+    }
 
     public function index()
     {
@@ -29,7 +32,8 @@ class ServicesController extends Controller
     {
         $this->servicesService->storeService($request->validated());
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')
+        ->with('success','Service created successfully');
     }
 
     public function edit(Service $service)
@@ -43,13 +47,15 @@ class ServicesController extends Controller
     {
         $this->servicesService->updateService($request->validated(), $service);
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')
+        ->with('success','Service updated successfully');
     }
 
     public function destroy(Service $service)
     {
         $this->servicesService->deleteService($service);
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')
+        ->with('success','Service deleted successfully');
     }
 }

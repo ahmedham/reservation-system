@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\ServicesController;
 
 /*
@@ -15,15 +15,19 @@ use App\Http\Controllers\ServicesController;
 |
 */
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('home');
 });
 
 
 Route::middleware(['auth'])->group(function(){
-    Route::resource('services', ServicesController::class)->middleware('can:is-admin');
+
+    Route::get('reservations', [ReservationsController::class, 'index'])->name('reservations.index');
+    Route::delete('reservations/{reservation}', [ReservationsController::class, 'destroy'])->name('reservations.destroy');
+    Route::get('services/{service}/reservations/create', [ReservationsController::class, 'create'])->name('services.reservations.create');
+    Route::post('services/{service}/reservations', [ReservationsController::class, 'store'])->name('services.reservations.store');
+    Route::resource('services', ServicesController::class);
 
 });
-
 
 Auth::routes();
 
