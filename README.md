@@ -59,6 +59,11 @@ Key features include:
   - **Email**: `admin@test.com`
   - **Password**: `password`
 
+- User dashboard login:
+
+  - **Email**: `user@test.com`
+  - **Password**: `password`
+
 ## 📌 Future Improvements
 
 - **Email and SMS Notifications**  
