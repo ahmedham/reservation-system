@@ -2,7 +2,12 @@
 
 ## 📖 Overview
 
-This is a Reservation System API built with Laravel. It allows users to register, log in, and book services. Admins can manage services and reservations through a secure dashboard. The API is protected using Laravel Sanctum for authentication, and the documentation is available via Swagger at:
+This project is a service reservation system built with Laravel using the MVC pattern and API.
+It lets users sign up, log in, and book services like coaching or repair.
+Users can also manage their reservations and cancel them if the reservation time hasn’t passed yet.
+Admins have a secure dashboard to manage services and see all reservations.
+The API is protected using Laravel Sanctum, and everything is documented with Swagger.
+You can explore the API at:
 [http://localhost:8000/api/documentation](http://localhost:8000/api/documentation)
 
 Key features include:
@@ -53,6 +58,12 @@ Key features include:
 
   - **Email**: `admin@test.com`
   - **Password**: `password`
+
+## 📌 Future Improvements
+
+- **Email and SMS Notifications**  
+  This helps users remember their bookings and reduces missed appointments. It makes the system easier and more helpful for real people to use.
+
 
 ## License
 This project is open-sourced under the MIT license. See the LICENSE file for more information.
