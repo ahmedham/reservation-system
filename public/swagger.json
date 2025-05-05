@@ -1,0 +1,99 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "description": "API documentation for your project",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register new users",
+                "operationId": "08136088c4862c313b35d6518bab8d3a",
+                "responses": {
+                    "201": {
+                        "description": "Successful register"
+                    },
+                    "401": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "login users",
+                "operationId": "99d66635c4992aeaa6aa44ff653d0563",
+                "responses": {
+                    "200": {
+                        "description": "User successfully logged in and token generated"
+                    },
+                    "400": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/reservations": {
+            "get": {
+                "tags": [
+                    "Reservation"
+                ],
+                "summary": "list all user reservations",
+                "operationId": "d11f814d36419d2d05626294ff641056",
+                "responses": {
+                    "200": {
+                        "description": "List of all user reservations successfully retrieved"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Reservation"
+                ],
+                "summary": "store reservation",
+                "operationId": "641db5c2fe7d05c99ce70b32268b0bed",
+                "responses": {
+                    "200": {
+                        "description": "Successful store reservation"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Reservation"
+                ],
+                "summary": "delete reservation",
+                "operationId": "85bd0883d7d35a295486d0a23d9d3722",
+                "responses": {
+                    "200": {
+                        "description": "Successful delete reservation"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        },
+        "/services": {
+            "get": {
+                "tags": [
+                    "Service"
+                ],
+                "summary": "list all services",
+                "operationId": "21744a060ae3354dca02b25ad94904b6",
+                "responses": {
+                    "200": {
+                        "description": "Successful list all services"
+                    }
+                }
+            }
+        }
+    }
+}
