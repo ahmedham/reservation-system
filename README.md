@@ -17,7 +17,7 @@ Key features include:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/reservation-system.git
+   git clone https://github.com/ahmedham/reservation-system.git
    cd reservation-system
    ```
 
