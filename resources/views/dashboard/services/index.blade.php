@@ -13,7 +13,7 @@
 
 <x-adminlte-modal id="modalDelete" title="Confirm Delete" size="md" theme="danger" icon="fas fa-exclamation-triangle"
     v-centered static-backdrop>
-    <p>Are you sure you want to cancel this reservations?</p>
+    <p>Are you sure you want to cancel this service?</p>
     <p>This action cannot be undone.</p>
 
     <x-slot name="footerSlot">
